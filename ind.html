@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Baatout ❤️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd1dc, #ff9a9e);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  width: 92%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 18px 35px rgba(0,0,0,0.2);
+  animation: fadeIn 0.4s ease;
+  z-index: 2;
+}
+
+.hidden { display: none; }
+
+h1, h2 { margin: 10px 0; }
+
+button {
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.yes { background: #ff6f91; color: white; }
+.no { background: #ddd; position: absolute; }
+
+select, input[type="range"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.choices-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.choice {
+  cursor: pointer;
+}
+
+.choice p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.choice img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* Hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 18px;
+  animation: floatUp 6s linear forwards;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- STEP 1 -->
+<div class="card" id="s1">
+  <h1>Baatout💕</h1>
+  <img src="baa.jpeg" width="250" height="250"> 
+  <h2>Would you give me a chance ?</h2>
+  <button class="yes" onclick="next(2)">Yessss</button>
+  <button class="no" id="noBtn">No 😢</button>
+</div>
+
+<!-- STEP 2 -->
+<div class="card hidden" id="s2">
+  <h2>📅 ekhtar wakt</h2>
+
+  <select>
+    <option>4 February</option>
+    <option>5 February</option>
+    <option>6 February</option>
+    <option>7 February</option>
+    <option>8 February</option>
+  </select>
+
+  <select>
+    <option>16:00</option>
+    <option>17:00</option>
+  </select>
+
+  <button class="yes" onclick="next(3)">Next 💕</button>
+</div>
+
+<!-- STEP 3 -->
+<div class="card hidden" id="s3">
+  <h2>🍽 chetheb tekel ?</h2>
+
+  <div class="choices-grid">
+
+    <div class="choice" onclick="next(4)">
+      <p>Pizza 🍕</p>
+      <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3">
+    </div>
+
+    <div class="choice" onclick="next(4)">
+      <p>Pasta 🍝</p>
+      <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e">
+    </div>
+
+    <div class="choice" onclick="next(4)">
+      <p>Burger 🍔</p>
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+    </div>
+
+    <div class="choice" onclick="next(4)">
+      <p>Sushi 🍣</p>
+      <img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
+    </div>
+
+    <div class="choice" onclick="next(4)" >
+      <p>Tekelni ena </p>
+      <img src="ena.jpeg">
+    </div>
+
+  </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="card hidden" id="s4">
+  <h2>What should we do?</h2>
+
+  <div class="choices-grid">
+
+    <div class="choice" onclick="next(5)">
+      <p>little walk</p>
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWN1b2h2bTdtNG1iNWlnMDUyc2F2ZDVvOXp4dWFldDAxYWZuaHU4YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bgOqrHkviLo063RLfM/giphy.gif">
+    </div>
+
+    <div class="choice" onclick="next(5)">
+      <p>Coffee </p>
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGNhemFybTAzdHB6NHJpM21sdmtycDk5N2JyZ3JndzVwOXh2c3dscSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MdFTR44EfNJSgBaiC8/giphy.gif">
+    </div>
+
+    <div class="choice" onclick="next(5)">
+      <p>Movie </p>
+      <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZTMxOWkzaDE3enpndWJteGQ5bWN5dGpvcDBtMHMyYTZ6aHk5ZnlpciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4AcA90iodEqVB6FT9n/giphy.gif">
+    </div>
+
+    <div class="choice" onclick="next(5)">
+      <p>Friends meeting</p>
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmdzYXZhbXJneGFrcmJhb3dobGY4b2VsYmFwYzQyYjQwNWdqa2tneiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/O6nDSzXD2pHC37ewvU/giphy.gif">
+    </div>
+
+  </div>
+</div>
+
+<!-- STEP 5 -->
+<div class="card hidden" id="s5">
+  <h2>how exited are you ? ( fibeli bik chethot 0 )</h2>
+  <input type="range" min="0" max="100" value="50" oninput="updateExcitement(this.value)">
+  <p id="ex">50% 💖</p>
+  <button class="yes" onclick="next(6)">Finish 💕</button>
+</div>
+
+<!-- STEP 6 -->
+<div class="card hidden" id="s6">
+  <h1>im sooo exited </h1>
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGNkb2hhenJ4bnZlb2l6aGJ1azFzOG51amFwMXRvaTM5aGh4dTZ0diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lflZFzP5ulk6NohNfB/giphy.gif" style="width:100%;border-radius:16px;">
+  <p>Thank you for choosing me</p>
+  <p> BY Wali</p>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const music = document.getElementById("music");
+
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.left = Math.random() * 80 + "vw";
+  noBtn.style.top = Math.random() * 80 + "vh";
+});
+
+function next(n){
+  document.querySelectorAll(".card").forEach(c => c.classList.add("hidden"));
+  document.getElementById("s"+n).classList.remove("hidden");
+
+  if(n === 2){
+    music.play();
+    startHearts();
+  }
+}
+
+function updateExcitement(v){
+  document.getElementById("ex").innerText = v + "% 💖";
+}
+
+function startHearts(){
+  setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerText = "💖";
+    h.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+  }, 350);
+}
+</script>
+
+</body>
+</html>
